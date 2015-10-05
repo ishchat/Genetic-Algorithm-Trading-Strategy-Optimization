@@ -179,7 +179,6 @@ integers is allocated during runtime on the heap and address of first element is
     // Use a as a normal array
     delete [] a;  // When done, free memory pointed to by a.
     a = NULL;     // Clear a to prevent using invalid memory reference. 
-	*/
 
 	//return statement of filereader function
 	return data1;
