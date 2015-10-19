@@ -39,4 +39,18 @@ The trading strategy is :
 1.When short period simple moving average (or exponential moving average) becomes greater than long period simple moving average (or exponential moving average) then it signals uptrend hence go long
 2.When short period simple moving average (or exponential moving average) becomes smaller than long period simple moving average (or exponential moving average) then it signals downtrend hence go short
 
-We start with random initialization of chromosomes and then itaret through the steps of Genetic Algorithm to achieve fitter chromosomes in terms of Sharpe ratio. These terminal chromosomes would have a combination of stock, strategy, short period moving average and long period moving average which have higher Sharpe ratio than previous generations. We can us these combinations in live trading.
+We start with random initialization of chromosomes and then iterate through the steps of Genetic Algorithm to achieve fitter chromosomes in terms of Sharpe ratio. These terminal chromosomes would have a combination of stock, strategy, short period moving average and long period moving average which have higher Sharpe ratio than previous generations. We can us these combinations in live trading.
+
+/*class priceseries has structure packettype to hold the daily date and prices. 2 constructors and methods to get the private values*/
+class priceseries
+
+/*Filereader function to read yahoo finance stock data from hard drive. Argument taken by function is name of the file.*/
+vector <priceseries> filereader(string filename)
+
+/*class chromosome defined here to hold 7 bit string, maps for company name, parameter A and parameter B*/
+class chromosome
+
+/*Fitness function to find fitness of object of class chromosome. Takes chromosome and map of company name : vector priceseries as inputs*/
+/*From the chromosome, the function extracts company name and from the map it uses the company name to get the vector of priceseries for that company*/
+double fitness(chromosome chrom1,std::map<std::string, vector <priceseries>> prices1)
+
