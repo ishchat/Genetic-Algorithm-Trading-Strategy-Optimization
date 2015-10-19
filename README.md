@@ -34,3 +34,7 @@ PARAMB GENE – MOVING AVERAGE 2 LOOKBACK
 
 So Gene = [01,1,00,11]
 Would be stock=Facebook, strategy=Exponential Moving Average,paramA=10,paramB=45]
+
+The trading strategy is : 
+1.When short period simple moving average (or exponential moving average) becomes greater than long period simple moving average (or exponential moving average) then it signals uptrend hence go long
+2.When short period simple moving average (or exponential moving average) becomes smaller than long period simple moving average (or exponential moving average) then it signals downtrend hence go short
