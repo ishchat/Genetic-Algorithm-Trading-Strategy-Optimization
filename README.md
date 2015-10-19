@@ -53,4 +53,22 @@ class chromosome
 /*Fitness function to find fitness of object of class chromosome. Takes chromosome and map of company name : vector priceseries as inputs*/
 /*From the chromosome, the function extracts company name and from the map it uses the company name to get the vector of priceseries for that company*/
 double fitness(chromosome chrom1,std::map<std::string, vector <priceseries>> prices1)
+/*Signal can only be generated for overlapping portions of (Length of price history - Lookback period of parameter A) 
+	  and (Length of price history - Lookback period of parameter B). Final part is alwyas overlapping. Only back part is non-overlapping. 
+	  So trade can only be done for min of the two : (Length of price history - Lookback period of parameter A) 
+	  and (Length of price history - Lookback period of parameter B)*/
+ size_t num_trading_days = min((p->second).size() - paramA,(p->second).size() - paramB);
+fitness function calculates SMA or EMA 
+/*To find rolling SMA with lookback period param A*/
+/*To find rolling SMA with lookback period param B*/
+for (size_t i = 0; i<(num_trading_days); i++)
+	{  
+		/*signal generation in case of SMA. Small period SMA > Large period SMA. So upward trend and thus buy. Else sell.*/
+		if (SMA_A[i]>SMA_B[i]) signal[i]=1; else signal[i]=-1;
+	}
+	
+	 SharpeRatio=(mean/SD);
+	 
+	 
+
 
