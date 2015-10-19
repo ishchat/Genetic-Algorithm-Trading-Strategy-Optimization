@@ -38,3 +38,5 @@ Would be stock=Facebook, strategy=Exponential Moving Average,paramA=10,paramB=45
 The trading strategy is : 
 1.When short period simple moving average (or exponential moving average) becomes greater than long period simple moving average (or exponential moving average) then it signals uptrend hence go long
 2.When short period simple moving average (or exponential moving average) becomes smaller than long period simple moving average (or exponential moving average) then it signals downtrend hence go short
+
+We start with random initialization of chromosomes and then itaret through the steps of Genetic Algorithm to achieve fitter chromosomes in terms of Sharpe ratio. These terminal chromosomes would have a combination of stock, strategy, short period moving average and long period moving average which have higher Sharpe ratio than previous generations. We can us these combinations in live trading.
