@@ -69,6 +69,12 @@ for (size_t i = 0; i<(num_trading_days); i++)
 	
 	 SharpeRatio=(mean/SD);
 	 
+vector <chromosome> initialization(int n)
+/*we want to make n divisible by 4 as we will select half of population before crossover and this half should be divisible by 2 so that pairs can form*/
+
+vector <chromosome> selectParents(vector <chromosome> population,std::map<std::string, vector <priceseries>> prices1)
+
+
 	 
 
 
