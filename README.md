@@ -41,6 +41,15 @@ The trading strategy is :
 
 We start with random initialization of chromosomes and then iterate through the steps of Genetic Algorithm to achieve fitter chromosomes in terms of Sharpe ratio. These terminal chromosomes would have a combination of stock, strategy, short period moving average and long period moving average which have higher Sharpe ratio than previous generations. We can us these combinations in live trading.
 
+The steps of Genetic algortihm are :
+a.Check for termination condition. If it is satisfied then stop GA else continue. The condition used here is number of generations
+b.Random initialization of starting Population
+c.Select half of the population based on fitness (Sharpe ratio)
+d.Crossover between randomly selected chromosome pairs followed by mutation
+e.Go back to step a.
+
+Description of various classes and functions used :
+
 /*class priceseries has structure packettype to hold the daily date and prices. 2 constructors and methods to get the private values*/
 class priceseries
 
@@ -73,7 +82,17 @@ vector <chromosome> initialization(int n)
 /*we want to make n divisible by 4 as we will select half of population before crossover and this half should be divisible by 2 so that pairs can form*/
 
 vector <chromosome> selectParents(vector <chromosome> population,std::map<std::string, vector <priceseries>> prices1)
+ /*only top half of population to be selected with greatest fitness values*/
+ 
+ vector <chromosome> crossoverWithmutation(vector <chromosome> subpopulation)
+ 	//This function would take subpopulation and randomly select 2 witout replacement during a run of the loop
+	//it will do crossover and mutation on progeny
+	//these two parents and mutated progeny would be added to new population
+	//these 2 parents would be removed from the subpopulation and in the next run of the loop we will again randomly select 2 parents without replacement
+	//...and so on
 
+
+ 
 
 	 
 
